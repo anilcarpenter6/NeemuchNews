@@ -1,380 +1,421 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>नीमच लाइव — खबरें, नौकरियां और स्थानीय अपडेट</title>
+<meta name="description" content="Neemuch Live — नीमच जिले की ताज़ा खबरें, मंडी भाव, नौकरियां, मौसम, गांव की खबरें और स्थानीय जानकारी।">
+<meta name="theme-color" content="#123b7a">
+<title>NEEMUCH LIVE — नीमच की हर जरूरी जानकारी</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 <style>
-:root{--blue:#123b7a;--blue2:#1d4ed8;--red:#e53935;--bg:#f4f6f9;--text:#172033;--muted:#667085}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans Devanagari','Nirmala UI',Mangal,system-ui,sans-serif}
-.top{background:#0d2f63;color:#fff;font-size:13px}.top .container{height:34px;display:flex;align-items:center;justify-content:space-between}
-.navbar{background:#fff;box-shadow:0 2px 14px #10182812}.brand{font-weight:900;color:var(--blue)!important;font-size:23px}.brand small{font-size:10px;display:block;color:#667085;letter-spacing:1.2px;font-weight:700;margin-top:-4px}
-.nav-link{font-weight:650;color:#344054!important}.nav-link:hover{color:var(--blue2)!important}
-.breaking{background:#fff;border-bottom:1px solid #eaecf0}.breaking .label{background:var(--red);color:#fff;padding:8px 13px;font-size:12px;font-weight:800}
-.hero{background:linear-gradient(120deg,#102f61,#1d4ed8);color:#fff;padding:34px 0}.hero h1{font-weight:900;font-size:clamp(2rem,5vw,3.3rem)}.hero p{color:#dbeafe;max-width:680px}
-.hero-search{background:#fff;border-radius:12px;padding:7px;box-shadow:0 12px 30px #081d3b44}.hero-search input{border:0;box-shadow:none}.hero-search button{border-radius:8px}
-.section-title{font-weight:850}.cardx{background:#fff;border:0;border-radius:14px;box-shadow:0 4px 18px #1018280c;overflow:hidden}.news-img{width:100%;height:180px;object-fit:cover;background:#e9eef5}.news-body{padding:17px}.tag{font-size:11px;font-weight:800;color:#1d4ed8;background:#eff6ff;border-radius:30px;padding:5px 9px}.news-title{font-size:18px;font-weight:800;line-height:1.3}.news-title a{color:inherit;text-decoration:none}.news-title a:hover{color:var(--blue2)}.meta{font-size:12px;color:var(--muted)}.job-row{padding:15px 0;border-bottom:1px solid #eaecf0}.job-row:last-child{border-bottom:0}.job-title{font-weight:750}.job-company{font-size:12px;color:var(--muted)}.pill{font-size:11px}.side-title{font-weight:800;border-left:4px solid var(--red);padding-left:9px}.quick{transition:.18s}.quick:hover{transform:translateY(-2px);box-shadow:0 8px 24px #10182818}.footer{background:#10213f;color:#cbd5e1}.footer a{color:#fff;text-decoration:none}.admin-fab{position:fixed;right:20px;bottom:20px;z-index:20;border-radius:50%;width:52px;height:52px;box-shadow:0 8px 25px #0003}
-.modal-content{border:0;border-radius:16px}.preview{height:180px;object-fit:cover;width:100%;border-radius:10px;background:#eef2f6}
-.admin-item{border:1px solid #eaecf0;border-radius:12px;padding:12px;margin-bottom:10px;background:#fff}.admin-item img{width:80px;height:60px;object-fit:cover;border-radius:8px}
-@media(max-width:767px){.top .right{display:none}.hero{padding:26px 0}.news-img{height:200px}.navbar-brand{font-size:20px}}
+:root{--blue:#123b7a;--blue2:#2563eb;--red:#e53935;--green:#16834a;--gold:#d18b00;--bg:#f4f7fb;--text:#172033;--muted:#667085}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans Devanagari','Nirmala UI',Mangal,system-ui,sans-serif}
+a{text-decoration:none}.top{background:#092550;color:#fff;font-size:13px}.top .container{min-height:34px;display:flex;align-items:center;justify-content:space-between}
+.navbar{background:#fff;box-shadow:0 2px 18px #10182812}.brand{font-weight:950;color:var(--blue)!important;font-size:23px}.brand small{font-size:9px;display:block;color:#667085;letter-spacing:1px;font-weight:800;margin-top:-3px}.nav-link{font-weight:700;color:#344054!important}.nav-link:hover{color:var(--blue2)!important}
+.breaking{background:#fff;border-bottom:1px solid #e5e7eb}.breaking .label{background:var(--red);color:#fff;padding:8px 13px;font-size:12px;font-weight:900;white-space:nowrap}.breaking-text{overflow:hidden;white-space:nowrap}
+.hero{background:radial-gradient(circle at 90% 10%,#3b82f633,transparent 35%),linear-gradient(120deg,#0b2854,#1d4ed8);color:#fff;padding:36px 0}.hero h1{font-weight:950;font-size:clamp(2rem,5vw,3.25rem);line-height:1.1}.hero p{color:#dbeafe;max-width:700px}.hero-search{background:#fff;border-radius:14px;padding:7px;box-shadow:0 14px 35px #081d3b55}.hero-search input{border:0;box-shadow:none}.hero-search button{border-radius:9px}
+.hero-stat{background:#fff;color:var(--text);border-radius:18px;padding:20px;box-shadow:0 14px 35px #081d3b35}.stat{background:#f7f9fc;border-radius:12px;padding:11px}.section-title{font-weight:900}.cardx{background:#fff;border:0;border-radius:16px;box-shadow:0 4px 20px #1018280c}.news-img{width:100%;height:190px;object-fit:cover;background:#e9eef5}.news-body{padding:17px}.tag{font-size:11px;font-weight:900;color:#1d4ed8;background:#eff6ff;border-radius:30px;padding:5px 9px}.news-title{font-size:18px;font-weight:850;line-height:1.35}.news-title a{color:inherit}.news-title a:hover{color:var(--blue2)}.meta{font-size:12px;color:var(--muted)}
+.feature-card{height:100%;padding:18px;transition:.2s;border:1px solid #eef2f7}.feature-card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #10182816}.feature-icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:22px;background:#eff6ff;color:#1d4ed8}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-bottom:14px}.side-title{font-weight:900;border-left:4px solid var(--red);padding-left:9px}
+.market-table th{font-size:12px;color:#667085;background:#f8fafc}.market-table td{font-weight:700;font-size:13px}.up{color:#16834a}.down{color:#d92d20}.weather-big{font-size:42px;font-weight:900}.village-chip{cursor:pointer;border:1px solid #e4e7ec;background:#fff;border-radius:12px;padding:10px 12px;font-weight:750;transition:.15s}.village-chip:hover,.village-chip.active{background:#eff6ff;border-color:#93c5fd;color:#1d4ed8}.job-row{padding:15px 0;border-bottom:1px solid #eaecf0}.job-row:last-child{border-bottom:0}.job-title{font-weight:800}.job-company{font-size:12px;color:var(--muted)}.pill{font-size:11px}.hero-list li{margin-bottom:9px}.share-btn{border:1px solid #d0d5dd;border-radius:10px;padding:7px 10px;background:#fff;font-size:12px;font-weight:800}.share-btn:hover{background:#f8fafc}.footer{background:#10213f;color:#cbd5e1}.footer a{color:#fff}.admin-fab{position:fixed;right:20px;bottom:20px;z-index:50;border-radius:50%;width:54px;height:54px;box-shadow:0 8px 25px #0003}.modal-content{border:0;border-radius:18px}.preview{height:180px;object-fit:cover;width:100%;border-radius:10px;background:#eef2f6}.admin-item{border:1px solid #eaecf0;border-radius:12px;padding:12px;margin-bottom:10px;background:#fff}.admin-item img{width:80px;height:60px;object-fit:cover;border-radius:8px}.badge-soft{background:#eef6ff;color:#175cd3}.poll-option{border:1px solid #d0d5dd;border-radius:10px;padding:9px 12px;cursor:pointer;margin-bottom:8px}.poll-option:hover{background:#f8fafc}.directory-card{border:1px solid #eaecf0;border-radius:13px;padding:13px;background:#fff;height:100%}.sticky-tools{position:sticky;top:78px}.small-muted{font-size:12px;color:var(--muted)}@media(max-width:767px){.top .right{display:none}.hero{padding:27px 0}.news-img{height:205px}.brand{font-size:20px}.sticky-tools{position:static}}
+.admin-item .btn{white-space:nowrap}.admin-item img{flex:0 0 auto}
 </style>
 </head>
 <body>
-
 <div class="top"><div class="container"><span><i class="bi bi-geo-alt-fill"></i> नीमच जिला, मध्य प्रदेश</span><span class="right" id="today"></span></div></div>
 
 <nav class="navbar navbar-expand-lg sticky-top">
 <div class="container">
-<a class="navbar-brand brand" href="#">NEEMUCH <span style="color:#e53935">LIVE</span><small>खबर • नौकरी • स्थानीय जानकारी</small></a>
+<a class="navbar-brand brand" href="#">NEEMUCH <span style="color:#e53935">LIVE</span><small>खबर • मंडी • नौकरी • गांव • स्थानीय जानकारी</small></a>
 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
 <div class="collapse navbar-collapse" id="nav">
-<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-<li class="nav-item"><a class="nav-link" href="#latest">ताज़ा खबरें</a></li>
-<li class="nav-item"><a class="nav-link" href="#jobs">नौकरियां</a></li>
-<li class="nav-item"><a class="nav-link" href="#local">स्थानीय</a></li>
-<li class="nav-item"><a class="nav-link" href="#useful">उपयोगी</a></li>
-<li class="nav-item"><button class="btn btn-primary btn-sm px-3" data-bs-toggle="modal" data-bs-target="#adminModal"><i class="bi bi-shield-lock"></i> एडमिन पैनल</button></li>
-</ul>
-</div>
-</div>
-</nav>
+<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+<li class="nav-item"><a class="nav-link" href="#latest">खबरें</a></li><li class="nav-item"><a class="nav-link" href="#mandi">मंडी भाव</a></li>
+<li class="nav-item"><a class="nav-link" href="#jobs">नौकरियां</a></li><li class="nav-item"><a class="nav-link" href="#village">मेरा गांव</a></li>
+<li class="nav-item"><a class="nav-link" href="#directory">लोकल डायरेक्टरी</a></li>
+<li class="nav-item"><button class="btn btn-primary btn-sm px-3" data-bs-toggle="modal" data-bs-target="#adminModal"><i class="bi bi-shield-lock"></i> एडमिन</button></li>
+</ul></div></div></nav>
 
-<div class="breaking"><div class="container d-flex align-items-center gap-3"><span class="label">ब्रेकिंग न्यूज़</span><div id="breakingText" class="small fw-semibold text-truncate py-2">नीमच जिले की ताज़ा और महत्वपूर्ण जानकारी</div></div></div>
+<div class="breaking"><div class="container d-flex align-items-center gap-3"><span class="label">🔴 ब्रेकिंग</span><marquee><div id="breakingText" class="breaking-text small fw-semibold py-2">नीमच की ताज़ा और महत्वपूर्ण जानकारी</div></marquee></div></div>
 
 <section class="hero">
-<div class="container">
-<div class="row align-items-center">
+<div class="container"><div class="row align-items-center">
 <div class="col-lg-8">
-<div class="small fw-bold mb-2 text-warning"><i class="bi bi-stars"></i> आपका स्थानीय सूचना केंद्र</div>
-<h1>नीमच की हर महत्वपूर्ण खबर, एक ही जगह।</h1>
-<p class="lead mb-4">स्थानीय खबरें, सरकारी अपडेट, नौकरी के अवसर, शिक्षा, मंडी जानकारी और जिले से जुड़ी उपयोगी जानकारी एक ही जगह।</p>
-<div class="hero-search d-flex">
-<input id="search" class="form-control form-control-lg" placeholder="नीमच की खबर, नौकरी या अपडेट खोजें...">
-<button class="btn btn-primary px-4" onclick="searchसमाचार()"><i class="bi bi-search"></i></button>
+<div class="small fw-bold mb-2 text-warning">✦ आपका डिजिटल स्थानीय सूचना केंद्र</div>
+<h1>नीमच की हर जरूरी जानकारी,<br>एक ही जगह।</h1>
+<p class="lead mb-4">ताज़ा खबरें, मंडी भाव, मौसम, सरकारी अपडेट, स्थानीय नौकरियां, गांव की खबरें, शिक्षा और आसपास की उपयोगी जानकारी।</p>
+<div class="hero-search d-flex"><input id="search" class="form-control form-control-lg" placeholder="खबर, गांव, नौकरी या जानकारी खोजें..."><button class="btn btn-primary px-4" onclick="searchSamachar()"><i class="bi bi-search"></i></button></div>
+<div class="d-flex flex-wrap gap-2 mt-3">
+<a class="btn btn-light btn-sm fw-bold" href="#mandi">🌾 आज का मंडी भाव</a><a class="btn btn-outline-light btn-sm fw-bold" href="#village">📍 मेरा गांव</a><button class="btn btn-warning btn-sm fw-bold" onclick="openSubmit()">📸 आपकी खबर भेजें</button>
 </div>
 </div>
-<div class="col-lg-4 mt-4 mt-lg-0">
-<div class="bg-white text-dark rounded-4 p-4">
-<div class="small text-secondary">आज नीमच में</div>
-<div class="fs-2 fw-bold mt-1" id="newsCount">0</div>
-<div class="text-secondary">इस पोर्टल पर उपलब्ध ताज़ा अपडेट</div>
-<div class="row g-2 mt-3">
-<div class="col-6"><div class="bg-light rounded-3 p-2"><strong id="jobCount">0</strong><br><small>नौकरियां</small></div></div>
-<div class="col-6"><div class="bg-light rounded-3 p-2"><strong>24×7</strong><br><small>अपडेट</small></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+<div class="col-lg-4 mt-4 mt-lg-0"><div class="hero-stat">
+<div class="small text-secondary">आज नीमच में</div><div class="fs-2 fw-bold" id="newsCount">0</div><div class="text-secondary">दिखाई जा रही अपडेट</div>
+<div class="row g-2 mt-3"><div class="col-6"><div class="stat"><strong id="jobCount">0</strong><br><small>नौकरियां</small></div></div><div class="col-6"><div class="stat"><strong id="marketCount">0</strong><br><small>मंडी भाव</small></div></div><div class="col-6"><div class="stat"><strong id="heroCount">0</strong><br><small>लोकल हीरो</small></div></div><div class="col-6"><div class="stat"><strong>24×7</strong><br><small>अपडेट</small></div></div></div>
+</div></div>
+</div></div></section>
 
 <main class="container py-4">
+
+<section class="mb-4"><div class="section-head"><div><h3 class="section-title mb-1">आज की उपयोगी जानकारी</h3><div class="small text-secondary">एक क्लिक में रोज़मर्रा की जरूरी चीजें</div></div></div>
+<div class="row g-3">
+<div class="col-6 col-md-3"><a href="#mandi"><div class="cardx feature-card"><div class="feature-icon">🌾</div><h6 class="fw-bold mt-3 mb-1">मंडी भाव</h6><div class="small-muted">फसल के आज के भाव</div></div></a></div>
+<div class="col-6 col-md-3"><a href="#weather"><div class="cardx feature-card"><div class="feature-icon">🌦️</div><h6 class="fw-bold mt-3 mb-1">आज का मौसम</h6><div class="small-muted">तापमान व बारिश</div></div></a></div>
+<div class="col-6 col-md-3"><a href="#jobs"><div class="cardx feature-card"><div class="feature-icon">💼</div><h6 class="fw-bold mt-3 mb-1">Local Jobs</h6><div class="small-muted">नीमच की नौकरियां</div></div></a></div>
+<div class="col-6 col-md-3"><a href="#village"><div class="cardx feature-card"><div class="feature-icon">📍</div><h6 class="fw-bold mt-3 mb-1">मेरा गांव</h6><div class="small-muted">गांव की स्थानीय खबर</div></div></a></div>
+</div></section>
+
 <div class="row g-4">
 <div class="col-lg-8">
 
-<div class="d-flex justify-content-between align-items-end mb-3" id="latest">
-<div><h3 class="section-title mb-1">ताज़ा खबरें</h3><div class="small text-secondary">ताज़ा स्थानीय खबरें और महत्वपूर्ण अपडेट</div></div>
-<div class="dropdown">
-<button class="btn btn-outline-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" id="filterBtn">सभी</button>
-<ul class="dropdown-menu dropdown-menu-end">
-<li><a class="dropdown-item" href="#" onclick="setFilter('सभी')">सभी</a></li>
-<li><a class="dropdown-item" href="#" onclick="setFilter('समाचार')">समाचार</a></li>
-<li><a class="dropdown-item" href="#" onclick="setFilter('नौकरियां')">नौकरियां</a></li>
-<li><a class="dropdown-item" href="#" onclick="setFilter('सरकारी')">सरकारी</a></li>
-<li><a class="dropdown-item" href="#" onclick="setFilter('शिक्षा')">शिक्षा</a></li>
-<li><a class="dropdown-item" href="#" onclick="setFilter('स्थानीय')">स्थानीय</a></li>
-</ul>
-</div>
-</div>
-<div id="newsGrid" class="row g-3"></div>
+<section id="latest" class="mb-5">
+<div class="section-head"><div><h3 class="section-title mb-1">📰 ताज़ा खबरें</h3><div class="small text-secondary">स्थानीय और महत्वपूर्ण अपडेट</div></div>
+<div class="dropdown"><button class="btn btn-outline-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" id="filterBtn">सभी</button><ul class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="#" onclick="setFilter('सभी');return false">सभी</a></li><li><a class="dropdown-item" href="#" onclick="setFilter('समाचार');return false">समाचार</a></li><li><a class="dropdown-item" href="#" onclick="setFilter('नौकरियां');return false">नौकरियां</a></li><li><a class="dropdown-item" href="#" onclick="setFilter('सरकारी');return false">सरकारी</a></li><li><a class="dropdown-item" href="#" onclick="setFilter('शिक्षा');return false">शिक्षा</a></li><li><a class="dropdown-item" href="#" onclick="setFilter('स्थानीय');return false">स्थानीय</a></li>
+</ul></div></div>
+<div id="newsGrid" class="row g-3"></div></section>
 
-<div class="mt-5" id="jobs">
-<div class="d-flex justify-content-between align-items-end mb-2"><div><h3 class="section-title mb-1">Latest नौकरियां</h3><div class="small text-secondary">सरकारी & local opportunities</div></div><span class="badge bg-primary">जॉब अलर्ट</span></div>
-<div class="cardx p-3" id="jobsList"></div>
-</div>
+<section id="mandi" class="mb-5">
+<div class="section-head"><div><h3 class="section-title mb-1">🌾 आज का मंडी भाव</h3><div class="small text-secondary">उदाहरण डेटा — admin से रोज़ अपडेट किया जा सकता है</div></div><span class="badge bg-success">आज</span></div>
+<div class="cardx p-3"><div class="table-responsive"><table class="table market-table align-middle mb-0"><thead><tr><th>फसल</th><th>न्यूनतम</th><th>अधिकतम</th><th>मॉडल</th><th>बदलाव</th></tr></thead><tbody id="marketBody"></tbody></table></div>
+<div class="small-muted mt-3">* वास्तविक भाव प्रकाशित करने से पहले अधिकृत मंडी/स्रोत से सत्यापित करें।</div></div></section>
+
+<section id="weather" class="mb-5"><div class="section-head"><div><h3 class="section-title mb-1">🌦️ आज का मौसम</h3><div class="small text-secondary">नीमच के लिए मौसम जानकारी</div></div></div>
+<div class="cardx p-4"><div class="row align-items-center"><div class="col-md-7"><div class="small text-secondary">नीमच • आज</div><div class="weather-big">29°C</div><div class="fw-bold">🌤️ आंशिक बादल</div><div class="small text-secondary mt-1">बारिश की संभावना 20% • हवा 14 km/h</div></div><div class="col-md-5 mt-3 mt-md-0"><div class="bg-light rounded-4 p-3"><div class="fw-bold mb-2">किसानों के लिए संकेत</div><ul class="small hero-list mb-0"><li>सुबह फसल निरीक्षण करें</li><li>बारिश की स्थानीय चेतावनी देखें</li><li>कीटनाशक छिड़काव से पहले मौसम जांचें</li></ul></div></div></div></div></section>
+
+<section id="jobs" class="mb-5"><div class="section-head"><div><h3 class="section-title mb-1">💼 नीमच की नौकरियां</h3><div class="small text-secondary">सरकारी + स्थानीय अवसर</div></div><span class="badge bg-primary">Job Alert</span></div>
+<div class="cardx p-3" id="jobsList"></div></section>
+
+<section id="heroes" class="mb-5"><div class="section-head"><div><h3 class="section-title mb-1">🏆 हमारे जिले के हीरो</h3><div class="small text-secondary">नीमच के प्रेरणादायक लोगों की कहानियां</div></div><button class="btn btn-outline-primary btn-sm" onclick="openHeroSubmit()">हीरो नामांकित करें</button></div>
+<div class="row g-3" id="heroesGrid"></div></section>
+
+<section id="poll" class="mb-5"><div class="cardx p-4"><div class="row align-items-center"><div class="col-md-7"><span class="badge badge-soft mb-2">🗳️ आज का सवाल</span><h4 class="fw-bold">आपके हिसाब से नीमच में सबसे ज्यादा किस जानकारी की जरूरत है?</h4><div id="pollOptions"></div><div id="pollResult" class="small text-success fw-bold"></div></div><div class="col-md-5 text-center mt-3 mt-md-0"><div style="font-size:70px">📊</div><div class="small text-secondary">आपकी राय से पोर्टल बेहतर बनेगा</div></div></div></div></section>
+
 </div>
 
 <aside class="col-lg-4">
-<div class="cardx p-3 mb-4">
-<h5 class="side-title mb-3">त्वरित लिंक</h5>
-<div class="row g-2">
-<div class="col-6"><a class="text-decoration-none text-dark" href="#jobs"><div class="quick bg-light rounded-3 p-3"><i class="bi bi-briefcase fs-4 text-primary"></i><div class="fw-bold mt-1">नौकरियां</div><small class="text-secondary">Latest vacancies</small></div></a></div>
-<div class="col-6"><div class="quick bg-light rounded-3 p-3"><i class="bi bi-building fs-4 text-primary"></i><div class="fw-bold mt-1">Govt अपडेट</div><small class="text-secondary">जिला सूचनाएं</small></div></div>
-<div class="col-6"><div class="quick bg-light rounded-3 p-3"><i class="bi bi-mortarboard fs-4 text-primary"></i><div class="fw-bold mt-1">शिक्षा</div><small class="text-secondary">स्कूल और परीक्षाएं</small></div></div>
-<div class="col-6"><div class="quick bg-light rounded-3 p-3"><i class="bi bi-shop fs-4 text-primary"></i><div class="fw-bold mt-1">मंडी भाव</div><small class="text-secondary">बाज़ार अपडेट</small></div></div>
-</div>
-</div>
+<div class="sticky-tools">
+<section id="village" class="cardx p-3 mb-4"><h5 class="side-title mb-3">📍 मेरा गांव</h5><p class="small text-secondary">अपना गांव चुनें और स्थानीय अपडेट देखें।</p><div class="d-flex flex-wrap gap-2" id="villageChips"></div><div class="alert alert-primary mt-3 mb-0 py-2"><strong id="selectedVillage">सभी गांव</strong><div class="small" id="villageInfo">गांव से जुड़ी खबरें और घोषणाएं यहां दिखेंगी।</div></div></section>
 
-<div class="cardx p-3 mb-4" id="local">
-<h5 class="side-title mb-3">नीमच जिला</h5>
-<div class="d-flex justify-content-between py-2 border-bottom"><span>Neemuch</span><strong>जिला मुख्यालय</strong></div>
-<div class="d-flex justify-content-between py-2 border-bottom"><span>Manasa</span><strong>तहसील</strong></div>
-<div class="d-flex justify-content-between py-2"><span>Jawad</span><strong>तहसील</strong></div>
-</div>
+<section class="cardx p-3 mb-4"><h5 class="side-title mb-3">🚨 जरूरी सूचना</h5><div id="alertsList"></div></section>
 
-<div class="cardx p-3 mb-4">
-<h5 class="side-title mb-3">महत्वपूर्ण वेबसाइट</h5>
-<a class="d-flex justify-content-between text-decoration-none py-2 border-bottom" href="https://neemuch.nic.in/" target="_blank"><span>नीमच जिला Portal</span><i class="bi bi-box-arrow-up-right"></i></a>
-<a class="d-flex justify-content-between text-decoration-none py-2 border-bottom" href="https://www.freejobalert.com/" target="_blank"><span>FreeJobAlert</span><i class="bi bi-box-arrow-up-right"></i></a>
-<a class="d-flex justify-content-between text-decoration-none py-2" href="https://www.mponline.gov.in/" target="_blank"><span>MPOnline</span><i class="bi bi-box-arrow-up-right"></i></a>
-</div>
+<section class="cardx p-3 mb-4"><h5 class="side-title mb-3">📚 विद्यार्थी कॉर्नर</h5>
+<a class="d-flex justify-content-between py-2 border-bottom text-dark" href="#jobs">🎓 Scholarship <i class="bi bi-chevron-right"></i></a>
+<a class="d-flex justify-content-between py-2 border-bottom text-dark" href="#jobs">📝 Exam & Admit Card <i class="bi bi-chevron-right"></i></a>
+<a class="d-flex justify-content-between py-2 border-bottom text-dark" href="#jobs">📢 Result Updates <i class="bi bi-chevron-right"></i></a>
+<a class="d-flex justify-content-between py-2 text-dark" href="#jobs">💼 Competitive Jobs <i class="bi bi-chevron-right"></i></a>
+</section>
 
-<div class="cardx p-3" id="useful">
-<h5 class="side-title mb-3">अपडेट रहें</h5>
-<p class="small text-secondary">इस पोर्टल को सेव करें और नई स्थानीय जानकारी के लिए रोज़ाना देखें।</p>
-<button class="btn btn-primary w-100" onclick="subscribe()">🔔 Get अपडेट</button>
-</div>
-</aside>
+<section id="directory" class="cardx p-3 mb-4"><h5 class="side-title mb-3">🏪 Local Business</h5><div class="row g-2" id="directoryGrid"></div><button class="btn btn-outline-primary btn-sm w-100 mt-3" onclick="alert('अपना व्यवसाय जोड़ने के लिए Admin/Contact विकल्प का उपयोग करें।')">+ अपना व्यवसाय जोड़ें</button></section>
+
+<section class="cardx p-3 mb-4"><h5 class="side-title mb-3">📸 आपकी खबर भेजें</h5><p class="small text-secondary">अपने गांव/शहर की खबर, फोटो या उपलब्धि भेजें। Admin approval के बाद ही प्रकाशित होगी।</p><button class="btn btn-primary w-100" onclick="openSubmit()">खबर भेजें</button></section>
+
+<section class="cardx p-3"><h5 class="side-title mb-3">📲 Neemuch Live से जुड़े रहें</h5><p class="small text-secondary">नई खबरों के लिए notification enable करें और खबर WhatsApp पर शेयर करें।</p><button class="btn btn-success w-100 mb-2" onclick="subscribe()">🔔 Notifications चालू करें</button><button class="btn btn-outline-success w-100" onclick="sharePortal()">🟢 WhatsApp पर शेयर करें</button></section>
+</div></aside>
 </div>
 </main>
 
-<footer class="footer py-4 mt-4">
-<div class="container d-flex flex-wrap justify-content-between gap-3">
-<div><strong>NEEMUCH LIVE</strong><div class="small mt-1">समाचार • नौकरियां • सरकारी • स्थानीय Information</div></div>
+<footer class="footer py-4 mt-4"><div class="container d-flex flex-wrap justify-content-between gap-3">
+<div><strong>NEEMUCH LIVE</strong><div class="small mt-1">समाचार • मंडी • नौकरी • गांव • स्थानीय जानकारी</div></div>
 <div class="small">स्वतंत्र स्थानीय सूचना पोर्टल। महत्वपूर्ण जानकारी की आधिकारिक स्रोत से पुष्टि अवश्य करें।</div>
-</div>
-</footer>
+</div></footer>
 
 <button class="btn btn-primary admin-fab" data-bs-toggle="modal" data-bs-target="#adminModal" title="एडमिन पैनल"><i class="bi bi-plus-lg"></i></button>
 
-<!-- ADMIN MODAL -->
-<div class="modal fade" id="adminModal" tabindex="-1">
-<div class="modal-dialog modal-lg modal-dialog-scrollable">
-<div class="modal-content">
-<div class="modal-header">
-<div><h5 class="modal-title fw-bold"><i class="bi bi-speedometer2"></i> एडमिन पैनल Panel</h5><small class="text-secondary">पोर्टल की जानकारी जोड़ें और प्रबंधित करें</small></div>
-<button class="btn-close" data-bs-dismiss="modal"></button>
-</div>
+<!-- USER SUBMISSION -->
+<div class="modal fade" id="submitModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content">
+<div class="modal-header"><div><h5 class="modal-title fw-bold">📸 अपनी खबर भेजें</h5><small class="text-secondary">Admin approval के बाद ही public होगी</small></div><button class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body"><form id="submitForm"><div class="row g-3">
+<div class="col-md-8"><label class="form-label fw-semibold">खबर का शीर्षक *</label><input id="uTitle" class="form-control" required></div>
+<div class="col-md-4"><label class="form-label fw-semibold">गांव/स्थान *</label><input id="uVillage" class="form-control" required placeholder="जैसे Bhatkhedi"></div>
+<div class="col-12"><label class="form-label fw-semibold">विवरण *</label><textarea id="uDescription" class="form-control" rows="4" required></textarea></div>
+<div class="col-md-6"><label class="form-label fw-semibold">आपका नाम</label><input id="uName" class="form-control"></div>
+<div class="col-md-6"><label class="form-label fw-semibold">मोबाइल</label><input id="uMobile" class="form-control" maxlength="10"></div>
+<div class="col-12"><label class="form-label fw-semibold">फोटो लिंक (वैकल्पिक)</label><input id="uImage" class="form-control" placeholder="https://..."></div>
+</div><button class="btn btn-primary mt-3" type="submit">📨 खबर भेजें</button></form></div>
+</div></div></div>
+
+<!-- HERO SUBMISSION -->
+<div class="modal fade" id="heroSubmitModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">🏆 स्थानीय हीरो नामांकित करें</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><form id="heroForm">
+<input id="heroName" class="form-control mb-2" required placeholder="व्यक्ति का नाम"><input id="heroPlace" class="form-control mb-2" placeholder="गांव/शहर"><textarea id="heroStory" class="form-control mb-2" rows="4" required placeholder="उनकी उपलब्धि/कहानी"></textarea><button class="btn btn-primary w-100">नामांकन भेजें</button>
+</form></div></div></div></div>
+
+<!-- ADMIN -->
+<div class="modal fade" id="adminModal" tabindex="-1"><div class="modal-dialog modal-xl modal-dialog-scrollable"><div class="modal-content">
+<div class="modal-header"><div><h5 class="modal-title fw-bold"><i class="bi bi-speedometer2"></i> NEEMUCH LIVE Admin</h5><small class="text-secondary">Content management center</small></div><button class="btn-close" data-bs-dismiss="modal"></button></div>
 <div class="modal-body">
-<div class="alert alert-info small"><strong>Online Database:</strong> समाचार Supabase में सेव होंगे। सेव किए गए समाचार सभी users को दिखाई देंगे।</div>
-<form id="newsForm">
-<input type="hidden" id="editId">
-<div class="row g-3">
-<div class="col-md-8"><label class="form-label fw-semibold">समाचार Title *</label><input id="title" class="form-control" required placeholder="समाचार का शीर्षक लिखें"></div>
-<div class="col-md-4"><label class="form-label fw-semibold">श्रेणी</label><select id="newsश्रेणी" class="form-select"><option>समाचार</option><option>नौकरियां</option><option>सरकारी</option><option>शिक्षा</option><option>स्थानीय</option></select></div>
-<div class="col-12"><label class="form-label fw-semibold">विवरण *</label><textarea id="description" class="form-control" rows="4" required placeholder="समाचार का विवरण लिखें..."></textarea></div>
-<div class="col-md-8"><label class="form-label fw-semibold">फोटो लिंक</label><input id="image" class="form-control" placeholder="https://example.com/news-image.jpg"></div>
-<div class="col-md-4"><label class="form-label fw-semibold">स्रोत / लिंक</label><input id="source" class="form-control" placeholder="https://official-source.gov.in"></div>
+<div class="alert alert-warning small"><strong>महत्वपूर्ण:</strong> इस static GitHub Pages version में Supabase RLS/Authentication सही तरह configure करें। Service role key कभी frontend में न रखें।</div>
+<ul class="nav nav-tabs mb-3"><li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#adminNews">📰 News</button></li><li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#adminPending">⏳ Pending <span id="pendingBadge" class="badge bg-danger ms-1">0</span></button></li><li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#adminMarket">🌾 Mandi</button></li></ul>
+<div class="tab-content">
+<div class="tab-pane fade show active" id="adminNews"><form id="newsForm"><input type="hidden" id="editId"><div class="row g-3">
+<div class="col-md-8"><label class="form-label fw-semibold">समाचार Title *</label><input id="title" class="form-control" required></div><div class="col-md-4"><label class="form-label fw-semibold">श्रेणी</label><select id="newsCategory" class="form-select"><option>समाचार</option><option>नौकरियां</option><option>सरकारी</option><option>शिक्षा</option><option>स्थानीय</option></select></div>
+<div class="col-12"><label class="form-label fw-semibold">विवरण *</label><textarea id="description" class="form-control" rows="4" required></textarea></div>
+<div class="col-md-8"><label class="form-label fw-semibold">फोटो लिंक</label><input id="image" class="form-control"></div><div class="col-md-4"><label class="form-label fw-semibold">स्रोत/लिंक</label><input id="source" class="form-control"></div>
+</div><div class="d-flex gap-2 mt-3"><button class="btn btn-primary">💾 Save & Publish</button><button class="btn btn-outline-secondary" type="button" onclick="clearForm()">साफ करें</button></div></form><hr><div id="adminList"></div></div>
+<div class="tab-pane fade" id="adminPending"><div class="small text-secondary mb-3">Users द्वारा भेजी गई खबरें यहां आएंगी। Approve करने के बाद public होंगी।</div><div id="pendingList"></div></div>
+<div class="tab-pane fade" id="adminMarket"><div class="small text-secondary mb-3">Demo market data browser localStorage में रखा गया है। Production में अलग Supabase table बनाकर इसे daily manage करें।</div><div id="adminMarketList"></div></div>
 </div>
-<div class="d-flex gap-2 mt-3"><button class="btn btn-primary" type="submit"><i class="bi bi-save"></i> Save समाचार</button><button class="btn btn-outline-secondary" type="button" onclick="clearForm()">साफ करें</button></div>
-</form>
-<hr class="my-4">
-<div class="d-flex justify-content-between align-items-center mb-2"><h6 class="fw-bold mb-0">Published समाचार</h6><button class="btn btn-sm btn-outline-danger" onclick="clearसभी()">Delete सभी</button></div>
-<div id="adminList"></div>
-</div>
-</div>
-</div>
-</div>
+</div></div></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const defaultसमाचार=[
-{id:101,title:"नीमच जिले की महत्वपूर्ण सरकारी जानकारी",description:"नीमच जिले की सरकारी योजनाओं, सार्वजनिक सेवाओं और महत्वपूर्ण लिंक की जानकारी यहां प्राप्त करें।",category:"सरकारी",image:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80",source:"https://neemuch.nic.in/",date:"2026-08-13"},
-{id:102,title:"ताज़ा सरकारी नौकरी और भर्ती अपडेट",description:"ताज़ा भर्ती अधिसूचना, पात्रता, आवेदन की अंतिम तिथि और आधिकारिक लिंक की जानकारी एक ही जगह देखें।",category:"नौकरियां",image:"https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80",source:"https://www.freejobalert.com/",date:"2026-08-12"},
-{id:103,title:"शिक्षा updates for students in Neemuch district",description:"परीक्षा, प्रवेश, छात्रवृत्ति और शिक्षा से जुड़ी महत्वपूर्ण जानकारी स्थानीय विद्यार्थियों के लिए।",category:"शिक्षा",image:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",source:"https://neemuch.nic.in/",date:"2026-08-11"},
-{id:104,title:"स्थानीय updates: Neemuch, Manasa and Jawad",description:"स्थानीय घोषणाओं, सामुदायिक जानकारी और जिले के महत्वपूर्ण अपडेट के लिए एक विशेष स्थान।",category:"स्थानीय",image:"https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=80",source:"",date:"2026-08-10"}
+const SUPABASE_URL="https://ywbsoymewetbpgtfxrdu.supabase.co";
+const SUPABASE_ANON_KEY="sb_publishable_kHoVO7m3d_q37gZI1-62vw_5GfvIvU_";
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+
+const defaultNews=[
+{id:101,title:"नीमच जिले की महत्वपूर्ण सरकारी जानकारी",description:"नीमच जिले की सरकारी योजनाओं, सार्वजनिक सेवाओं और महत्वपूर्ण लिंक की जानकारी एक ही जगह।",category:"सरकारी",image:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80",source:"https://neemuch.nic.in/",date:"2026-08-17"},
+{id:102,title:"ताज़ा सरकारी नौकरी और भर्ती अपडेट",description:"भर्ती अधिसूचना, पात्रता, आवेदन की अंतिम तिथि और आधिकारिक लिंक की जानकारी।",category:"नौकरियां",image:"https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80",source:"https://www.freejobalert.com/",date:"2026-08-17"},
+{id:103,title:"विद्यार्थियों के लिए परीक्षा और शिक्षा अपडेट",description:"परीक्षा, प्रवेश, छात्रवृत्ति और शिक्षा से जुड़ी महत्वपूर्ण जानकारी।",category:"शिक्षा",image:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",source:"https://neemuch.nic.in/",date:"2026-08-16"},
+{id:104,title:"मनासा और नीमच क्षेत्र के स्थानीय अपडेट",description:"स्थानीय घोषणाओं, सामुदायिक जानकारी और महत्वपूर्ण क्षेत्रीय अपडेट के लिए विशेष स्थान।",category:"स्थानीय",image:"https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=80",source:"",date:"2026-08-16"}
 ];
-const defaultनौकरियां=[
-{title:"Latest सरकारी Recruitment",company:"सरकारी / Recruitment Boards",edu:"10th / 12th / Graduate",deadline:"अधिसूचना देखें",source:"https://www.freejobalert.com/"},
+const defaultJobs=[
 {title:"MP सरकारी Job अपडेट",company:"Madhya Pradesh",edu:"विभिन्न योग्यताएं",deadline:"अधिसूचना देखें",source:"https://www.mponline.gov.in/"},
-{title:"नीमच जिला Recruitment",company:"नीमच जिला",edu:"As per Notification",deadline:"आधिकारिक सूचना देखें",source:"https://neemuch.nic.in/"}
+{title:"नीमच जिला Recruitment",company:"नीमच जिला",edu:"As per Notification",deadline:"आधिकारिक सूचना देखें",source:"https://neemuch.nic.in/"},
+{title:"Private / Local Jobs",company:"नीमच एवं आसपास",edu:"10th / 12th / Graduate",deadline:"नियोक्ता से पुष्टि करें",source:"#"}
 ];
+const market=JSON.parse(localStorage.getItem("nl_market")||"null")||[
+{crop:"सोयाबीन",min:4300,max:5200,model:4850,change:"+120",dir:"up"},
+{crop:"गेहूं",min:2450,max:3100,model:2780,change:"+40",dir:"up"},
+{crop:"लहसुन",min:5500,max:12500,model:8700,change:"-180",dir:"down"},
+{crop:"धनिया",min:5200,max:7600,model:6400,change:"+90",dir:"up"},
+{crop:"प्याज",min:1800,max:2900,model:2350,change:"-60",dir:"down"}
+];
+const villages=["मनासा","भाटखेड़ी बुजुर्ग","रामपुरा","कुकड़ेश्वर","जीरन","नीमच","जावद","सिंगोली"];
+const alerts=["आज की सरकारी घोषणाएं आधिकारिक स्रोत से सत्यापित करें।","बिजली/पानी कटौती की स्थानीय सूचना यहां दिखाई जाएगी।","मौसम चेतावनी होने पर यह section सबसे ऊपर दिखाया जाएगा।"];
+const heroes=[
+{name:"स्थानीय युवा उपलब्धि",place:"नीमच",story:"जिले के ऐसे युवाओं की उपलब्धियां यहां प्रकाशित की जाएंगी जिन्होंने शिक्षा, खेल या सेवा में उल्लेखनीय कार्य किया है।",icon:"🎓"},
+{name:"प्रगतिशील किसान",place:"मनासा क्षेत्र",story:"स्थानीय किसानों की नई तकनीक, बेहतर खेती और प्रेरणादायक सफलता की कहानियां।",icon:"🌾"},
+{name:"समर्पित समाजसेवी",place:"नीमच जिला",story:"समाज के लिए उल्लेखनीय काम करने वाले स्थानीय नागरिकों की कहानियां।",icon:"❤️"}
+];
+const directory=[["🏥","अस्पताल / क्लिनिक"],["💊","मेडिकल स्टोर"],["🍽️","रेस्टोरेंट"],["🔧","मैकेनिक"],["💻","कंप्यूटर / मोबाइल"],["🚕","टैक्सी / ट्रैवल"],["🏨","होटल"],["🛒","किराना / स्टोर"]];
 
-// ================= SUPABASE CONFIG =================
-// Replace these values with your Supabase Project URL and anon/publishable key.
-// NEVER put the Supabase service_role key in this file.
-const SUPABASE_URL = "https://ywbsoymewetbpgtfxrdu.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_kHoVO7m3d_q37gZI1-62vw_5GfvIvU_";
+let news=[],activeFilter="सभी";
 
-const supabaseClient = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
-
-let news = [];
-let activeFilter="सभी";
-
-async function loadNews(){
-  if(SUPABASE_URL === "YOUR_SUPABASE_URL"){
-    news = [...defaultसमाचार];
-    render();
-    return;
-  }
-
-  const { data, error } = await supabaseClient
-    .from("news")
-    .select("*")
-    .eq("is_published", true)
-    .order("created_at", { ascending:false });
-
-  if(error){
-    console.error("Supabase news load error:", error);
-    news = [...defaultसमाचार];
-    render();
-    return;
-  }
-
-  news = (data || []).map(n => ({
-    id:n.id,
-    title:n.title,
-    description:n.description,
-    category:n.category,
-    image:n.image || "",
-    source:n.source || "",
-    date:n.date || new Date(n.created_at).toISOString().slice(0,10)
-  }));
-
-  render();
-}
-
-function subscribeToNews(){
-  if(SUPABASE_URL === "YOUR_SUPABASE_URL") return;
-
-  supabaseClient
-    .channel("public-news-changes")
-    .on(
-      "postgres_changes",
-      { event:"*", schema:"public", table:"news" },
-      () => loadNews()
-    )
-    .subscribe();
-}
-
-
-
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+function formatDate(d){return d?new Date(d+"T00:00:00").toLocaleDateString("hi-IN",{day:"numeric",month:"short",year:"numeric"}):"आज";}
 document.getElementById("today").textContent=new Date().toLocaleDateString("hi-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
 
-function escapeHTML(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+async function loadNews() {
+  try {
+    const { data, error } = await supabaseClient
+      .from("news")
+      .select("*")
+      .eq("is_published", true)
+      .order("created_at", { ascending: false });
+
+    if (error) throw error;
+
+    news = (data || []).map(n => ({
+      id: n.id,
+      title: n.title,
+      description: n.description,
+      category: n.category,
+      image: n.image || "",
+      source: n.source || "",
+      date: n.date || (n.created_at
+        ? new Date(n.created_at).toISOString().slice(0, 10)
+        : "")
+    }));
+
+    if (!news.length) news = [...defaultNews];
+  } catch (error) {
+    console.error("Supabase news load error:", error);
+    news = [...defaultNews];
+  }
+
+  render();
+  await loadPending();
+}
 
 function render(){
-const q=document.getElementById("search").value.toLowerCase().trim();
-let list=news.filter(n=>(activeFilter==="सभी"||n.category===activeFilter)&&(!q||(n.title+" "+n.description+" "+n.category).toLowerCase().includes(q)));
+const q=(document.getElementById("search").value||"").toLowerCase().trim();
+const list=news.filter(n=>(activeFilter==="सभी"||n.category===activeFilter)&&(!q||(n.title+" "+n.description+" "+n.category).toLowerCase().includes(q)));
 document.getElementById("newsCount").textContent=list.length;
-document.getElementById("newsGrid").innerHTML=list.map(n=>`
-<div class="col-md-6">
-<article class="cardx h-100">
-<img class="news-img" src="${escapeHTML(n.image)||'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=900&q=80'}" onerror="this.src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=900&q=80'">
-<div class="news-body">
-<span class="tag">${escapeHTML(n.category)}</span>
-<h4 class="news-title mt-2 mb-2">${n.source?`<a href="${escapeHTML(n.source)}" target="_blank">${escapeHTML(n.title)}</a>`:escapeHTML(n.title)}</h4>
-<p class="text-secondary small mb-3">${escapeHTML(n.description)}</p>
-<div class="meta"><i class="bi bi-calendar3"></i> ${escapeHTML(n.date||"आज")} &nbsp; • &nbsp; Neemuch</div>
-</div>
-</article>
-</div>`).join("");
-renderएडमिनपैनल();
-renderनौकरियां();
-const first=list[0];document.getElementById("breakingText").textContent=first?first.title:"Neemuch district latest updates";
+document.getElementById("newsGrid").innerHTML=list.length?list.map(n=>`
+<div class="col-md-6"><article class="cardx h-100"><img class="news-img" src="${esc(n.image)||'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=900&q=80'}" onerror="this.style.display='none'">
+<div class="news-body"><span class="tag">${esc(n.category)}</span><h4 class="news-title mt-2 mb-2">${n.source?`<a href="${esc(n.source)}" target="_blank" rel="noopener">${esc(n.title)}</a>`:esc(n.title)}</h4>
+<p class="text-secondary small mb-3">${esc(n.description)}</p><div class="meta"><i class="bi bi-calendar3"></i> ${formatDate(n.date)} • Neemuch</div>
+<div class="d-flex gap-2 mt-3"><button class="share-btn" onclick='shareNews(${JSON.stringify(n.title)})'>🟢 WhatsApp</button><button class="share-btn" onclick='copyNews(${JSON.stringify(n.title)})'>🔗 लिंक कॉपी</button></div></div></article></div>`).join(""):"<div class='col-12'><div class='cardx p-5 text-center text-secondary'>कोई खबर नहीं मिली।</div></div>";
+document.getElementById("breakingText").textContent=list[0]?list[0].title:"नीमच की ताज़ा जानकारी";
+renderAdmin();renderJobs();renderMarket();renderHeroes();renderDirectory();renderAlerts();
 }
-function renderनौकरियां(){
-document.getElementById("jobCount").textContent=defaultनौकरियां.length;
-document.getElementById("jobsList").innerHTML=defaultनौकरियां.map(j=>`
-<div class="job-row d-flex justify-content-between align-items-center gap-3">
-<div><div class="job-title">${j.title}</div><div class="job-company">${j.company} • ${j.edu}</div></div>
-<div class="text-end"><span class="badge bg-light text-dark pill">${j.deadline}</span><br><a class="btn btn-link btn-sm p-0 mt-1" href="${j.source}" target="_blank">विवरण देखें</a></div>
-</div>`).join("");
-}
-function setFilter(f){event.preventDefault();activeFilter=f;document.getElementById("filterBtn").textContent=f;render();}
-function searchसमाचार(){render();document.getElementById("latest").scrollIntoView({behavior:"smooth"});}
+function renderJobs(){document.getElementById("jobCount").textContent=defaultJobs.length;document.getElementById("jobsList").innerHTML=defaultJobs.map(j=>`<div class="job-row d-flex justify-content-between align-items-center gap-3"><div><div class="job-title">${esc(j.title)}</div><div class="job-company">${esc(j.company)} • ${esc(j.edu)}</div></div><div class="text-end"><span class="badge bg-light text-dark pill">${esc(j.deadline)}</span><br><a class="btn btn-link btn-sm p-0 mt-1" href="${esc(j.source)}" target="_blank">विवरण देखें</a></div></div>`).join("");}
+function renderMarket(){document.getElementById("marketCount").textContent=market.length;document.getElementById("marketBody").innerHTML=market.map(m=>`<tr><td>${esc(m.crop)}</td><td>₹${Number(m.min).toLocaleString("en-IN")}</td><td>₹${Number(m.max).toLocaleString("en-IN")}</td><td>₹${Number(m.model).toLocaleString("en-IN")}</td><td class="${m.dir==='up'?'up':'down'}">${esc(m.change)} ${m.dir==='up'?'↑':'↓'}</td></tr>`).join("");document.getElementById("adminMarketList").innerHTML=market.map((m,i)=>`<div class="admin-item"><strong>${esc(m.crop)}</strong> — ₹${m.min} to ₹${m.max} | Model ₹${m.model} | ${esc(m.change)} <button class="btn btn-sm btn-outline-danger float-end" onclick="deleteMarket(${i})">हटाएं</button></div>`).join("");}
+function renderHeroes(){document.getElementById("heroCount").textContent=heroes.length;document.getElementById("heroesGrid").innerHTML=heroes.map(h=>`<div class="col-md-4"><div class="cardx feature-card"><div style="font-size:36px">${h.icon}</div><h5 class="fw-bold mt-2">${esc(h.name)}</h5><div class="small text-primary fw-bold">${esc(h.place)}</div><p class="small text-secondary mt-2 mb-0">${esc(h.story)}</p></div></div>`).join("");}
+function renderAlerts(){document.getElementById("alertsList").innerHTML=alerts.map(a=>`<div class="py-2 border-bottom small"><span class="text-danger">●</span> ${esc(a)}</div>`).join("");}
+function renderDirectory(){document.getElementById("directoryGrid").innerHTML=directory.map(x=>`<div class="col-6"><div class="directory-card"><div style="font-size:24px">${x[0]}</div><div class="fw-bold small mt-1">${esc(x[1])}</div><div class="small-muted">स्थानीय सेवाएं</div></div></div>`).join("");}
+function renderVillages(){document.getElementById("villageChips").innerHTML=villages.map((v,i)=>`<button class="village-chip ${i===0?'active':''}" onclick="selectVillage(this,${JSON.stringify(v)})">${esc(v)}</button>`).join("");}
+function selectVillage(el,v){document.querySelectorAll(".village-chip").forEach(x=>x.classList.remove("active"));el.classList.add("active");document.getElementById("selectedVillage").textContent=v;document.getElementById("villageInfo").textContent=v+" से जुड़ी खबरें, पंचायत सूचना, स्कूल अपडेट और स्थानीय कार्यक्रम यहां दिखेंगे।";}
+
+function setFilter(f){activeFilter=f;document.getElementById("filterBtn").textContent=f;render();}
+function searchSamachar(){render();document.getElementById("latest").scrollIntoView({behavior:"smooth"});}
 document.getElementById("search").addEventListener("input",render);
 
-async function saveसमाचार(e){
+function shareNews(title){const text=`📰 ${title}\n\nNeemuch Live पर पढ़ें — नीमच की स्थानीय खबरें और अपडेट`;window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank");}
+function copyNews(title){navigator.clipboard?.writeText(location.href+"#latest").then(()=>alert("लिंक कॉपी हो गया।"));} 
+function sharePortal(){const text="NEEMUCH LIVE — नीमच की खबरें, मंडी भाव, नौकरियां और स्थानीय अपडेट देखें: "+location.href;window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank");}
+function subscribe(){if("Notification"in window&&Notification.permission!=="granted")Notification.requestPermission().then(p=>alert(p==="granted"?"Notifications चालू हो गईं।":"Notification permission नहीं मिली।"));else alert("Notifications preference इस device पर सेव है।");}
+
+function openSubmit(){new bootstrap.Modal(document.getElementById("submitModal")).show();}
+function openHeroSubmit(){new bootstrap.Modal(document.getElementById("heroSubmitModal")).show();}
+document.getElementById("submitForm").addEventListener("submit", submitUserNews);
+document.getElementById("heroForm").addEventListener("submit",e=>{e.preventDefault();alert("हीरो nomination प्राप्त हुआ। Admin verification के बाद प्रकाशित किया जाएगा।");e.target.reset();bootstrap.Modal.getInstance(document.getElementById("heroSubmitModal")).hide();});
+
+async function submitUserNews(e) {
   e.preventDefault();
 
-  if(SUPABASE_URL === "YOUR_SUPABASE_URL"){
-    alert("पहले Supabase URL और Anon Key configure करें।");
+  const title = document.getElementById("uTitle").value.trim();
+  const village = document.getElementById("uVillage").value.trim();
+  const description = document.getElementById("uDescription").value.trim();
+  const name = document.getElementById("uName").value.trim();
+  const mobile = document.getElementById("uMobile").value.trim();
+  const image = document.getElementById("uImage").value.trim();
+
+  if (!title || !village || !description) {
+    alert("कृपया शीर्षक, गांव/स्थान और विवरण भरें।");
     return;
   }
 
-  const title=document.getElementById("title").value.trim();
-  const description=document.getElementById("description").value.trim();
-
-  if(!title || !description){
-    alert("कृपया शीर्षक और विवरण भरें।");
-    return;
-  }
-
-  const id=document.getElementById("editId").value;
-  const item={
+  const item = {
     title,
-    description,
-    category:document.getElementById("newsश्रेणी").value,
-    image:document.getElementById("image").value.trim(),
-    source:document.getElementById("source").value.trim(),
-    date:new Date().toISOString().slice(0,10),
-    is_published:true
+    description: `स्थान: ${village}${name ? ` | भेजने वाले: ${name}` : ""}${mobile ? ` | मोबाइल: ${mobile}` : ""}\n\n${description}`,
+    category: "स्थानीय",
+    image,
+    source: "",
+    date: new Date().toISOString().slice(0, 10),
+    is_published: false
   };
 
-  const result = id
-    ? await supabaseClient.from("news").update(item).eq("id", Number(id))
-    : await supabaseClient.from("news").insert(item);
+  try {
+    const { error } = await supabaseClient
+      .from("news")
+      .insert(item);
 
-  if(result.error){
-    console.error("Supabase save error:", result.error);
-    alert("समाचार सेव नहीं हो सका: " + result.error.message);
+    if (error) throw error;
+
+    e.target.reset();
+    bootstrap.Modal.getInstance(document.getElementById("submitModal")).hide();
+    await loadPending();
+    alert("आपकी खबर भेज दी गई है। Admin approval के बाद यह सभी users को दिखाई देगी।");
+  } catch (error) {
+    console.error("User submission error:", error);
+    alert("खबर सेव नहीं हो सकी: " + error.message + "\n\nSupabase में news table और INSERT RLS policy check करें।");
+  }
+}
+
+async function loadPending() {
+  try {
+    const { data, error } = await supabaseClient
+      .from("news")
+      .select("*")
+      .eq("is_published", false)
+      .order("created_at", { ascending: false });
+
+    if (error) throw error;
+    renderPending(data || []);
+  } catch (error) {
+    console.error("Pending news load error:", error);
+    renderPending([]);
+  }
+}
+
+function renderPending(items = []) {
+  const list = document.getElementById("pendingList");
+  const badge = document.getElementById("pendingBadge");
+
+  if (!list) return;
+
+  if (badge) {
+    badge.textContent = items.length;
+    badge.style.display = items.length ? "inline-block" : "none";
+  }
+
+  if (!items.length) {
+    list.innerHTML = `<div class="text-center text-secondary py-4">कोई pending submission नहीं है।</div>`;
     return;
   }
 
-  clearForm();
-  await loadNews();
-  alert("समाचार सफलतापूर्वक सेव हो गया। अब सभी users इसे देख सकते हैं।");
+  list.innerHTML = items.map(item => `
+    <div class="admin-item">
+      <div class="d-flex gap-3 align-items-start">
+        ${item.image ? `<img src="${esc(item.image)}" alt="" onerror="this.style.visibility='hidden'">` : ""}
+        <div class="flex-grow-1">
+          <div class="d-flex justify-content-between gap-2">
+            <strong>${esc(item.title)}</strong>
+            <span class="badge bg-warning text-dark">Pending</span>
+          </div>
+          <div class="small text-secondary mt-1">
+            ${esc(item.category || "स्थानीय")} • ${formatDate(item.date)}
+          </div>
+          <p class="small mb-2 mt-2" style="white-space:pre-line">${esc(item.description)}</p>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-sm btn-success" onclick="approvePending(${Number(item.id)})">✓ Approve & Publish</button>
+            <button class="btn btn-sm btn-outline-danger" onclick="rejectPending(${Number(item.id)})">✕ Reject</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join("");
 }
-document.getElementById("newsForm").addEventListener("submit",saveसमाचार);
 
+async function approvePending(id) {
+  if (!confirm("क्या आप इस खबर को approve करके public करना चाहते हैं?")) return;
+
+  try {
+    const { error } = await supabaseClient
+      .from("news")
+      .update({ is_published: true })
+      .eq("id", Number(id))
+      .eq("is_published", false);
+
+    if (error) throw error;
+
+    await loadNews();
+    await loadPending();
+    alert("खबर approved और published हो गई। अब सभी users इसे देख सकते हैं।");
+  } catch (error) {
+    console.error("Approve error:", error);
+    alert("Approval नहीं हो सका: " + error.message + "\n\nSupabase RLS में UPDATE permission check करें।");
+  }
+}
+
+async function rejectPending(id) {
+  if (!confirm("क्या आप इस pending खबर को reject करके हटाना चाहते हैं?")) return;
+
+  try {
+    const { error } = await supabaseClient
+      .from("news")
+      .delete()
+      .eq("id", Number(id))
+      .eq("is_published", false);
+
+    if (error) throw error;
+
+    await loadPending();
+    alert("Pending खबर reject कर दी गई।");
+  } catch (error) {
+    console.error("Reject error:", error);
+    alert("Reject नहीं हो सका: " + error.message + "\n\nSupabase RLS में DELETE permission check करें।");
+  }
+}
+
+async function saveNews(e){e.preventDefault();const title=document.getElementById("title").value.trim(),description=document.getElementById("description").value.trim();if(!title||!description)return;
+const item={title,description,category:document.getElementById("newsCategory").value,image:document.getElementById("image").value.trim(),source:document.getElementById("source").value.trim(),date:new Date().toISOString().slice(0,10),is_published:true};
+const id=document.getElementById("editId").value;let result;
+try{result=id?await supabaseClient.from("news").update(item).eq("id",Number(id)):await supabaseClient.from("news").insert(item);if(result.error)throw result.error;clearForm();await loadNews();alert("समाचार सफलतापूर्वक publish हो गया।");}catch(err){const extra=JSON.parse(localStorage.getItem("nl_extra_news")||"[]");extra.unshift({...item,id:Date.now()});localStorage.setItem("nl_extra_news",JSON.stringify(extra));clearForm();await loadNews();alert("Supabase save नहीं हुआ, इसलिए demo/local mode में समाचार सेव किया गया। Production में RLS/credentials जांचें।");}}
+document.getElementById("newsForm").addEventListener("submit",saveNews);
 function clearForm(){document.getElementById("newsForm").reset();document.getElementById("editId").value="";}
-function editसमाचार(id){
-const n=news.find(x=>x.id===id);if(!n)return;
-document.getElementById("editId").value=n.id;document.getElementById("title").value=n.title;document.getElementById("description").value=n.description;document.getElementById("newsश्रेणी").value=n.category;document.getElementById("image").value=n.image||"";document.getElementById("source").value=n.source||"";
-document.querySelector("#newsForm").scrollIntoView({behavior:"smooth"});
-}
-async function deleteसमाचार(id){
-  if(!confirm("क्या आप यह समाचार हटाना चाहते हैं?")) return;
+function renderAdmin(){const el=document.getElementById("adminList");el.innerHTML=news.length?news.map(n=>`<div class="admin-item d-flex gap-3 align-items-center"><img src="${esc(n.image)}" onerror="this.style.visibility='hidden'"><div class="flex-grow-1"><strong>${esc(n.title)}</strong><div class="small text-secondary">${esc(n.category)} • ${formatDate(n.date)}</div></div><button class="btn btn-sm btn-outline-primary" onclick="editNews(${n.id})">✎</button><button class="btn btn-sm btn-outline-danger" onclick="deleteNews(${n.id})">🗑</button></div>`).join(""):"<div class='text-center text-secondary py-4'>अभी कोई समाचार नहीं है।</div>";}
+function editNews(id){const n=news.find(x=>x.id===id);if(!n)return;document.getElementById("editId").value=n.id;document.getElementById("title").value=n.title;document.getElementById("description").value=n.description;document.getElementById("newsCategory").value=n.category;document.getElementById("image").value=n.image||"";document.getElementById("source").value=n.source||"";document.querySelector('[data-bs-target="#adminNews"]').click();}
+async function deleteNews(id){if(!confirm("यह समाचार हटाएं?"))return;try{const {error}=await supabaseClient.from("news").delete().eq("id",Number(id));if(error)throw error;}catch(e){let a=JSON.parse(localStorage.getItem("nl_extra_news")||"[]");localStorage.setItem("nl_extra_news",JSON.stringify(a.filter(n=>n.id!==id)));}await loadNews();}
+function deleteMarket(i){market.splice(i,1);localStorage.setItem("nl_market",JSON.stringify(market));renderMarket();}
 
-  const { error } = await supabaseClient.from("news").delete().eq("id", Number(id));
-
-  if(error){
-    console.error("Supabase delete error:", error);
-    alert("समाचार हटाया नहीं जा सका: " + error.message);
-    return;
-  }
-
-  await loadNews();
-}
-
-async function clearसभी(){
-  if(!confirm("क्या आप सभी सेव किए गए समाचार हटाना चाहते हैं?")) return;
-
-  const { error } = await supabaseClient
-    .from("news")
-    .delete()
-    .not("id", "is", null);
-
-  if(error){
-    console.error("Supabase delete-all error:", error);
-    alert("समाचार हटाए नहीं जा सके: " + error.message);
-    return;
-  }
-
-  await loadNews();
-}
-function renderएडमिनपैनल(){
-document.getElementById("adminList").innerHTML=news.length?news.map(n=>`
-<div class="admin-item d-flex gap-3 align-items-center">
-<img src="${escapeHTML(n.image)}" onerror="this.style.visibility='hidden'">
-<div class="flex-grow-1"><strong>${escapeHTML(n.title)}</strong><div class="small text-secondary">${escapeHTML(n.category)} • ${escapeHTML(n.date)}</div></div>
-<button class="btn btn-sm btn-outline-primary" onclick="editसमाचार(${n.id})"><i class="bi bi-pencil"></i></button>
-<button class="btn btn-sm btn-outline-danger" onclick="deleteसमाचार(${n.id})"><i class="bi bi-trash"></i></button>
-</div>`).join(""):`<div class="text-center text-secondary py-4">अभी कोई समाचार नहीं जोड़ा गया है।</div>`;
-}
-function subscribe(){
-if("Notification" in window && Notification.permission!=="granted")Notification.requestPermission().then(()=>alert("अपडेट preference saved on this device."));
-else alert("अपडेट preference saved on this device.");
-}
-loadNews();
-subscribeToNews();
+function renderPoll(){const opts=["मंडी भाव","Local Jobs","गांव की खबरें","सरकारी अपडेट"];document.getElementById("pollOptions").innerHTML=opts.map(o=>`<div class="poll-option" onclick="votePoll(${JSON.stringify(o)})">◯ ${o}</div>`).join("");}
+function votePoll(o){localStorage.setItem("nl_poll",o);document.getElementById("pollResult").textContent="धन्यवाद! आपकी पसंद सेव हो गई: "+o;}
+renderVillages();renderPoll();renderPending();loadNews();
 </script>
 </body>
 </html>
